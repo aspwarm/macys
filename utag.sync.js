@@ -1,0 +1,9 @@
+//tealium universal tag - utag.sync ut4.0.202310251426, Copyright 2023 Tealium.com Inc. All Rights Reserved.
+(function(){var host=location.hostname||'',path=location.pathname||'',isAuthUrl=/^auth\./.test(host),isProd=/macys\.com/.test(host),bcove_urls=['^/campaign/'
+],bcove_regex=new RegExp(bcove_urls.join('|')),isBCovePage=bcove_regex.test(path),prd;function loadScript(url){if(url){var c=document.createDocumentFragment(),s=document.createElement('script');s.type='text/javascript';s.src=url;s.async=false;c.appendChild(s)
+document.head.appendChild(c);}}
+if(!(/mcom-141/ig.test(window.location.href))){loadScript('https://assets.macysassets.com/javascript/ecid_5_2_0.js');}
+function loadAdobeTT(){window.targetPageParams=function(){function a(a){var b,c,d,e=document.cookie.split(";");for(b=0;b<e.length;b++)if(c=e[b].substr(0,e[b].indexOf("=")),d=e[b].substr(e[b].indexOf("=")+1),c=c.replace(/^\s+|\s+$/g,""),c==a)return unescape(d)}function b(){return"1"==a("SignedIn")}var c=[];a("macys_online_uid")&&b()&&c.push("mbox3rdPartyId="+a("macys_online_uid")),a("macys_online_uid")&&b()&&c.push("profile.uid="+a("macys_online_uid")),b()?c.push("profile.visitorType=registered"):c.push("profile.visitorType=guest"),a("shippingCountry")&&c.push("shippingCountry="+a("shippingCountry")),a("SignedIn")&&"1"==a("SignedIn")?c.push("signedIn=true"):c.push("signedIn=false");var d=document.URL,e=(d||"").match("[?&]id=([^&]+)");return e&&e.length?(id=e[1],c.push("user.categoryId="+id)):(e=(d||"").match("[?&]CategoryID=([^&]+)"),e&&e.length&&(id=e[1],c.push("user.categoryId="+id))),!isProd?(c.push("at_property=fb775475-c51b-94d0-3f22-f3e1e1b8d7e8")):(prd=false),c.join("&")};}
+if(!isAuthUrl){loadAdobeTT();}
+function loadBrightCove(){loadScript('//sadmin.brightcove.com/js/BrightcoveExperiences.js');loadScript('//sadmin.brightcove.com/js/APIModules_all.js');}
+})();
